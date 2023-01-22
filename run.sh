@@ -1,6 +1,5 @@
 #!/usr/bin bash
 
-javac src/main/* -d bin/
+javac -d bin/ src/**/*.java
 cd bin
 java main.Main
-
