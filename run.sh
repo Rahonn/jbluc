@@ -2,4 +2,4 @@
 
 javac -d bin/ src/**/*.java
 cd bin
-java main.Main
+java main.Main $@
