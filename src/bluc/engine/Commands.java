@@ -10,6 +10,7 @@ import bluc.engine.codes.Input;
 import bluc.engine.codes.MathCmd;
 import bluc.engine.codes.Print;
 import bluc.engine.codes.PrintVar;
+import bluc.engine.codes.RunIfCmd;
 import bluc.engine.codes.SetVar;
 import bluc.engine.codes.base.Basecode;
 
@@ -62,6 +63,12 @@ public class Commands {
         if (Pattern.compile("^IF", Pattern.MULTILINE).matcher(line).find()) {
 
             return new IfCmd(line, index);
+
+        }
+
+        if (Pattern.compile("^RUNIF", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new RunIfCmd(line, index);
 
         }
 

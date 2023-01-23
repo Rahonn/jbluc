@@ -81,6 +81,14 @@ public class App {
 
             Basecode cmd = Commands.getCommand(lines.get(i), null);
 
+            App.varmamager.addCmd(cmd);
+
+        }
+
+        for (int i = 0; i < App.varmamager.getCmdList().size(); i++) {
+
+            Basecode cmd = App.varmamager.getCmd(i);
+
             boolean good = cmd.run();
 
             if (!good) {

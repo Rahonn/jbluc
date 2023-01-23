@@ -1,17 +1,21 @@
 package bluc.engine.vars;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
+import bluc.engine.codes.base.Basecode;
 import print.PrintableColors;
 import print.Printer;
 
 public class VarMamager {
     
     private HashMap<String, Var<String>> vars;
+    private ArrayList<Basecode> cmdList;
 
     public VarMamager() {
 
         this.vars = new HashMap<>();
+        this.cmdList = new ArrayList<>();
 
         this.setVar("VERSION", new Var<String>("11.0.0"));
         this.setVar("JBLUC", new Var<String>("1.0.0"));
@@ -47,6 +51,30 @@ public class VarMamager {
         Printer.println("//////////////", PrintableColors.CYAN);
         Printer.println("///DUMP END///", PrintableColors.CYAN);
         Printer.println("//////////////", PrintableColors.CYAN);
+
+    }
+
+    public HashMap<String, Var<String>> getVars() {
+
+        return this.vars;
+
+    }
+
+    public ArrayList<Basecode> getCmdList() {
+
+        return this.cmdList;
+
+    }
+
+    public void addCmd(Basecode cmd) {
+
+        this.cmdList.add(cmd);
+
+    }
+
+    public Basecode getCmd(int index) {
+
+        return this.cmdList.get(index);
 
     }
 
