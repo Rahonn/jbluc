@@ -22,3 +22,11 @@ MATH temp ** 3 2
 
 PRINTVAR NEW_AGE
 PRINTVAR temp
+
+#SET age = 64
+
+#MATH age ** age 2
+
+DELAY 0.5
+
+SET msg = Comeline did not run
