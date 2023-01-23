@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import bluc.engine.Commands;
+import bluc.engine.codes.Input;
 import bluc.engine.codes.base.Basecode;
 import bluc.engine.vars.VarMamager;
 import print.PrintableColors;
@@ -30,15 +31,50 @@ public class App {
 
         if (this.args.length == 0) {
 
+            Printer.println("Welcome to JBLUC (Java BLUC)!", PrintableColors.GREEN);
+
             this.help();
 
         } else if (this.args[0].equalsIgnoreCase("-i")) {
 
             this.runCode();
 
-        } else if (this.args[0].equalsIgnoreCase("-h") || this.args[0].equalsIgnoreCase("-help") || this.args[0].equalsIgnoreCase("--help")) {
+        } else if (this.args[0].equalsIgnoreCase("-h") || this.args[0].equalsIgnoreCase("-help") || this.args[0].equalsIgnoreCase("--help") || this.args[0].equalsIgnoreCase("--h")) {
 
             this.help();
+
+        } else if (this.args[0].equalsIgnoreCase("-v") || this.args[0].equalsIgnoreCase("-version") || this.args[0].equalsIgnoreCase("--version") || this.args[0].equalsIgnoreCase("--v")) {
+
+            this.version();
+
+        } else if (this.args[0].equalsIgnoreCase("-d")) {
+
+            Printer.println("Running code...\n", PrintableColors.BLUE);
+
+            System.out.print(PrintableColors.GREEN.getStart());
+            this.runCode();
+            System.out.print(PrintableColors.GREEN.getEnd());
+
+            System.out.println();
+
+            App.varmamager.varDump();
+
+            Printer.print("\nIs this ok? (y or n): ", PrintableColors.BLUE);
+
+            System.out.print(PrintableColors.BLUE.getStart());
+            String res = Input.scanner.nextLine();
+            System.out.print(PrintableColors.BLUE.getEnd());
+
+            if (res.equalsIgnoreCase("y")) {
+
+                Printer.println("Thanks for using JBLUC", PrintableColors.BLUE);
+
+            } else {
+
+                Printer.println("Goodbye!", PrintableColors.BLUE);
+
+            }
+
 
         }
 
@@ -50,6 +86,14 @@ public class App {
         Printer.println("Print\t-\tTo print something out\t-\tPRINT [string]", PrintableColors.BLUE);
         Printer.println("Print Var\t-\tTo print a var out\t-\tPRINTVAR [varname]", PrintableColors.BLUE);
         Printer.println("Set\t-\tTo set a var\t-\tSET [varname] = [value]", PrintableColors.BLUE);
+
+        this.version();
+
+    }
+
+    public void version() {
+
+        Printer.println("BLUC version: " + App.VERSION + "\nJBLUC version: " + App.JBLUC, PrintableColors.GREEN);
 
     }
 

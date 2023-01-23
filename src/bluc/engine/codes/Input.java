@@ -8,7 +8,7 @@ import main.App;
 
 public class Input extends Basecode {
 
-    private static Scanner scanner = new Scanner(System.in);
+    public static Scanner scanner = new Scanner(System.in);
 
     private String varname;
 
