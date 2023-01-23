@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import bluc.engine.codes.base.Basecode;
+import main.App;
 import print.PrintableColors;
 import print.Printer;
 
@@ -17,8 +18,8 @@ public class VarMamager {
         this.vars = new HashMap<>();
         this.cmdList = new ArrayList<>();
 
-        this.setVar("VERSION", new Var<String>("11.0.0"));
-        this.setVar("JBLUC", new Var<String>("1.0.0"));
+        this.setVar("VERSION", new Var<String>(App.VERSION));
+        this.setVar("JBLUC", new Var<String>(App.JBLUC));
 
     }
 
