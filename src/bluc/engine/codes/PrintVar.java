@@ -15,7 +15,15 @@ public class PrintVar extends Basecode {
     @Override
     public boolean run() {
 
-        System.out.println(App.getvarmamager().getVar(this.varName).getData());
+        try {
+
+            System.out.println(App.getvarmamager().getVar(this.varName).getData());
+
+        } catch (Exception e) {
+
+            return false;
+
+        }
 
         return true;
 
