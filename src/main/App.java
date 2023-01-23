@@ -33,13 +33,20 @@ public class App {
 
             this.runCode();
 
+        } else if (this.args[0].equalsIgnoreCase("-h") || this.args[0].equalsIgnoreCase("-help") || this.args[0].equalsIgnoreCase("--help")) {
+
+            this.help();
+
         }
 
     }
 
     public void help() {
 
-        Printer.println("This mode has not been writen yet...", PrintableColors.RED);
+        Printer.println("\tCode Help", PrintableColors.CYAN);
+        Printer.println("Print\t-\tTo print something out\t-\tPRINT [string]", PrintableColors.BLUE);
+        Printer.println("Print Var\t-\tTo print a var out\t-\tPRINTVAR [varname]", PrintableColors.BLUE);
+        Printer.println("Set\t-\tTo set a var\t-\tSET [varname] = [value]", PrintableColors.BLUE);
 
     }
 
