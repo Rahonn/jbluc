@@ -3,6 +3,7 @@ package bluc.engine;
 import java.util.regex.Pattern;
 
 import bluc.engine.codes.Comment;
+import bluc.engine.codes.Delay;
 import bluc.engine.codes.ErrorOut;
 import bluc.engine.codes.Input;
 import bluc.engine.codes.MathCmd;
@@ -48,6 +49,12 @@ public class Commands {
         if (Pattern.compile("^MATH", Pattern.MULTILINE).matcher(line).find()) {
 
             return new MathCmd(line, index);
+
+        }
+
+        if (Pattern.compile("^DELAY", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new Delay(line, index);
 
         }
 
