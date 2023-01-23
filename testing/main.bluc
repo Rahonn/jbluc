@@ -30,3 +30,19 @@ PRINTVAR temp
 DELAY 0.5
 
 SET msg = Comeline did not run
+
+#!msg = "Comeline did run"
+
+PRINTVAR msg
+
+MATH randNum1t100 RAND 1 100
+MATH randNum1tage RAND 1 age
+MATH randNum RAND @ @
+
+PRINTVAR randNum
+PRINTVAR randNum1t100
+PRINTVAR randNum1tage
+
+IF over50age $age > 50 :The age is over 50:The age is under 50:
+
+PRINTVAR over50age
