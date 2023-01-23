@@ -1,5 +1,5 @@
 #!/usr/bin bash
 
-javac -d bin/ src/**/*.java
+javac $(find src -name "*.java") -d bin/
 cd bin
 java main.Main $@
