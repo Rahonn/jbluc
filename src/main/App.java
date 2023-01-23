@@ -80,7 +80,7 @@ public class App {
 
                 Printer.println("\nError!!!\n", PrintableColors.RED);
                 System.out.println(lines.get(i));
-                Printer.println("\n^\n| Error on this line", PrintableColors.BLUE);
+                Printer.println("\n^\n| Error on this line\n", PrintableColors.BLUE);
                 System.exit(0);
 
             }
