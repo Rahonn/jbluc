@@ -1,5 +1,18 @@
 PRINT Hi there
 PRINT vars are next
 PRINT the age is
-SET age = 15
-PRINTVAR age
+#SET age = 15
+#PRINTVAR age
+PRINT the version is 
+PRINTVAR VERSION
+PRINTVAR JBLUC
+
+PRINT enter you name
+INPUT name
+#SET age = 21
+PRINT  
+PRINT Hi
+PRINTVAR name
+
+PRINT enter your age
+INPUT age
