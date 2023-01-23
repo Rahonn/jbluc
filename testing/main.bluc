@@ -16,3 +16,9 @@ PRINTVAR name
 
 PRINT enter your age
 INPUT age
+
+MATH NEW_AGE / age 2
+MATH temp ** 3 2
+
+PRINTVAR NEW_AGE
+PRINTVAR temp
