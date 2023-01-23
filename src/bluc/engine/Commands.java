@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 import bluc.engine.codes.Comment;
 import bluc.engine.codes.Delay;
 import bluc.engine.codes.ErrorOut;
+import bluc.engine.codes.IfCmd;
 import bluc.engine.codes.Input;
 import bluc.engine.codes.MathCmd;
 import bluc.engine.codes.Print;
@@ -55,6 +56,12 @@ public class Commands {
         if (Pattern.compile("^DELAY", Pattern.MULTILINE).matcher(line).find()) {
 
             return new Delay(line, index);
+
+        }
+
+        if (Pattern.compile("^IF", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new IfCmd(line, index);
 
         }
 
