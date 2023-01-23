@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 import bluc.engine.codes.Comment;
 import bluc.engine.codes.Delay;
 import bluc.engine.codes.ErrorOut;
+import bluc.engine.codes.ExitCmd;
 import bluc.engine.codes.IfCmd;
 import bluc.engine.codes.Input;
 import bluc.engine.codes.MathCmd;
@@ -69,6 +70,12 @@ public class Commands {
         if (Pattern.compile("^RUNIF", Pattern.MULTILINE).matcher(line).find()) {
 
             return new RunIfCmd(line, index);
+
+        }
+
+        if (Pattern.compile("^EXIT", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new ExitCmd(line, index);
 
         }
 
