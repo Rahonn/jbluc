@@ -37,7 +37,7 @@ public class App {
 
         } else if (this.args[0].equalsIgnoreCase("-i")) {
 
-            this.runCode();
+            this.runCode(this.args[1]);
 
         } else if (this.args[0].equalsIgnoreCase("-h") || this.args[0].equalsIgnoreCase("-help") || this.args[0].equalsIgnoreCase("--help") || this.args[0].equalsIgnoreCase("--h")) {
 
@@ -52,7 +52,7 @@ public class App {
             Printer.println("Running code...\n", PrintableColors.BLUE);
 
             System.out.print(PrintableColors.GREEN.getStart());
-            this.runCode();
+            this.runCode(this.args[1]);
             System.out.print(PrintableColors.GREEN.getEnd());
 
             System.out.println();
@@ -76,6 +76,10 @@ public class App {
             }
 
 
+        } else if (this.args.length == 1) {
+
+            this.runCode(this.args[0]);
+
         }
 
     }
@@ -97,13 +101,13 @@ public class App {
 
     }
 
-    public void runCode() {
+    public void runCode(String path) {
 
         ArrayList<String> lines = new ArrayList<String>();
         
         try {
             
-            FileReader fr = new FileReader(new File(this.args[1]));
+            FileReader fr = new FileReader(new File(path));
     
             BufferedReader br = new BufferedReader(fr);
 
@@ -119,7 +123,7 @@ public class App {
             fr.close();
 
         } catch (FileNotFoundException e) {
-            Printer.println("Can't find file " + this.args[1], PrintableColors.RED);
+            Printer.println("Can't find file " + path, PrintableColors.RED);
         } catch (IOException e) {
             Printer.println(e.toString(), PrintableColors.RED);
         }
