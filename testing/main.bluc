@@ -50,4 +50,8 @@ PRINTVAR over50age
 PRINT Do you want to exit? (y or n)
 INPUT doexit
 
-RUNIF $doexit == !y! |PRINT well we can't exit yet...|PRINT Thanks for staying. Now here is a random number!|
+RUNIF $doexit == !y! |EXIT|PRINT Thanks for staying. Now here is a random number!|
+
+MATH anewrandnum RAND @ @
+
+PRINTVAR anewrandnum
