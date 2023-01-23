@@ -1,0 +1,5 @@
+PRINT Hi there
+PRINT vars are next
+PRINT the age is
+SET age = 15
+PRINTVAR age
