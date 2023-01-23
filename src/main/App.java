@@ -8,12 +8,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import bluc.engine.Commands;
 import bluc.engine.codes.base.Basecode;
+import bluc.engine.vars.VarMamager;
 import print.PrintableColors;
 import print.Printer;
 
 public class App {
 
     private String[] args;
+    private static VarMamager varmamager = new VarMamager();
 
     public App(String[] args) {
 
@@ -85,6 +87,12 @@ public class App {
 
         }
 
+
+    }
+
+    public static VarMamager getvarmamager() {
+
+        return App.varmamager;
 
     }
 
