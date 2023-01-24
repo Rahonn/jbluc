@@ -1,6 +1,6 @@
 package bluc.engine.codes.base;
 
-public abstract class Basecode {
+public abstract class Basecode implements Cloneable {
     
     protected String line;
     protected Integer index;
@@ -32,6 +32,17 @@ public abstract class Basecode {
 
 
         return this.index;
+
+    }
+
+    @Override
+    public Basecode clone() {
+
+        try {
+            return (Basecode) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
 
     }
 
