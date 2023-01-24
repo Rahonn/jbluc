@@ -1,0 +1,12 @@
+PRINT 1 or 0
+INPUT in
+
+RUNIF $in == !0! |SET times = 1|PASS|
+RUNIF $in == !1! |SET times = @|PASS|
+
+LOOP _ times
+
+PRINTVAR in
+
+ENDLOOP
+
