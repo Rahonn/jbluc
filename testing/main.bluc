@@ -59,7 +59,7 @@ PRINTVAR anewrandnum
 
 IMPORT ../testing/folder/file3.bluc
 
-#PASS
+PASS
 
 PRINTVAR randnumf21t747
 
