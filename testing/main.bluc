@@ -55,3 +55,12 @@ RUNIF $doexit == !y! |EXIT|PRINT Thanks for staying. Now here is a random number
 MATH anewrandnum RAND @ @
 
 PRINTVAR anewrandnum
+
+
+IMPORT ../testing/folder/file3.bluc
+
+#PASS
+
+PRINTVAR randnumf21t747
+
+
