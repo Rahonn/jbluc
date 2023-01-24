@@ -12,6 +12,11 @@ public class ErrorOut extends Basecode {
     public boolean run() {
         return false;
     }
+
+    @Override
+    public String toString() {
+        return "ErrorOut [line=" + this.line + "]";
+    }
     
     
 

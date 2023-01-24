@@ -7,6 +7,7 @@ import bluc.engine.codes.Delay;
 import bluc.engine.codes.ErrorOut;
 import bluc.engine.codes.ExitCmd;
 import bluc.engine.codes.IfCmd;
+import bluc.engine.codes.ImportCmd;
 import bluc.engine.codes.Input;
 import bluc.engine.codes.MathCmd;
 import bluc.engine.codes.Print;
@@ -76,6 +77,12 @@ public class Commands {
         if (Pattern.compile("^EXIT", Pattern.MULTILINE).matcher(line).find()) {
 
             return new ExitCmd(line, index);
+
+        }
+
+        if (Pattern.compile("^IMPORT", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new ImportCmd(line, index);
 
         }
 
