@@ -9,6 +9,9 @@ import bluc.engine.codes.ExitCmd;
 import bluc.engine.codes.IfCmd;
 import bluc.engine.codes.ImportCmd;
 import bluc.engine.codes.Input;
+import bluc.engine.codes.LoopBreak;
+import bluc.engine.codes.LoopEnd;
+import bluc.engine.codes.LoopStart;
 import bluc.engine.codes.MathCmd;
 import bluc.engine.codes.PassCmd;
 import bluc.engine.codes.Print;
@@ -90,6 +93,24 @@ public class Commands {
         if (Pattern.compile("^PASS", Pattern.MULTILINE).matcher(line).find()) {
 
             return new PassCmd(line, index);
+
+        }
+
+        if (Pattern.compile("^LOOP", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new LoopStart(line, index);
+
+        }
+
+        if (Pattern.compile("^ENDLOOP", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new LoopEnd(line, index);
+
+        }
+
+        if (Pattern.compile("^BREAKLOOP", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new LoopBreak(line, index);
 
         }
 

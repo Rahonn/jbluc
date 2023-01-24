@@ -12,11 +12,13 @@ public class VarMamager {
     
     private HashMap<String, Var<String>> vars;
     private ArrayList<Basecode> cmdList;
+    private boolean runningLoop;
 
     public VarMamager() {
 
         this.vars = new HashMap<>();
         this.cmdList = new ArrayList<>();
+        this.runningLoop = false;
 
         this.setVar("VERSION", new Var<String>(App.VERSION));
         this.setVar("JBLUC", new Var<String>(App.JBLUC));
@@ -76,6 +78,18 @@ public class VarMamager {
     public Basecode getCmd(int index) {
 
         return this.cmdList.get(index);
+
+    }
+
+    public boolean getRunningLoop() {
+
+        return this.runningLoop;
+
+    }
+
+    public void setRunningLoop(boolean runningLoop) {
+
+        this.runningLoop = runningLoop;
 
     }
 
