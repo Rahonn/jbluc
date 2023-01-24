@@ -10,6 +10,7 @@ import bluc.engine.codes.IfCmd;
 import bluc.engine.codes.ImportCmd;
 import bluc.engine.codes.Input;
 import bluc.engine.codes.MathCmd;
+import bluc.engine.codes.PassCmd;
 import bluc.engine.codes.Print;
 import bluc.engine.codes.PrintVar;
 import bluc.engine.codes.RunIfCmd;
@@ -83,6 +84,12 @@ public class Commands {
         if (Pattern.compile("^IMPORT", Pattern.MULTILINE).matcher(line).find()) {
 
             return new ImportCmd(line, index);
+
+        }
+
+        if (Pattern.compile("^PASS", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new PassCmd(line, index);
 
         }
 
