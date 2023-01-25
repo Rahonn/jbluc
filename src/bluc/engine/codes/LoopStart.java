@@ -10,7 +10,7 @@ public class LoopStart extends Basecode {
 
     private ArrayList<Basecode> cmdList;
     private String timesS;
-    private int times;
+    private Integer times;
     private String indexVarname;
     private boolean isWhile;
     private String text;
@@ -128,11 +128,15 @@ public class LoopStart extends Basecode {
 
             }
 
+            App.getvarmamager().setRunningLoop(false);
+
         } else {
 
             App.getvarmamager().setRunningLoop(true);
 
-            for (int i = 0; i < Integer.parseInt(String.valueOf(this.times)); i++) {
+            int ltimes = this.times == null ? Integer.parseInt(String.valueOf(this.timesS)) : this.times;
+            
+            for (int i = 0; i < ltimes; i++) {
 
                 App.getvarmamager().setVar(this.indexVarname, new Var<String>(String.valueOf(Double.parseDouble(String.valueOf(i)))));
 
@@ -165,6 +169,8 @@ public class LoopStart extends Basecode {
 
             }
 
+            App.getvarmamager().setRunningLoop(false);
+
         }
 
         for (int i = 0; i < this.cmdList.size(); i++) {
@@ -184,8 +190,16 @@ public class LoopStart extends Basecode {
 
         boolean isgood = false;
 
-        isgood = this.findData();
-        isgood = this.execute();
+        try {
+
+            isgood = this.findData();
+            isgood = this.execute();
+
+        } catch (Exception e) {
+
+            return false;
+
+        }
 
         return isgood;
     }
