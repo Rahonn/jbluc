@@ -167,6 +167,14 @@ public class LoopStart extends Basecode {
 
         }
 
+        for (int i = 0; i < this.cmdList.size(); i++) {
+
+            Basecode item = this.cmdList.get(i);
+
+            App.getvarmamager().getCmdList().remove(item);
+
+        }
+
         return true;
 
     }
