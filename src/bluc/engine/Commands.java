@@ -16,6 +16,7 @@ import bluc.engine.codes.MathCmd;
 import bluc.engine.codes.PassCmd;
 import bluc.engine.codes.Print;
 import bluc.engine.codes.PrintVar;
+import bluc.engine.codes.ReadFile;
 import bluc.engine.codes.RunIfCmd;
 import bluc.engine.codes.SetVar;
 import bluc.engine.codes.base.Basecode;
@@ -111,6 +112,12 @@ public class Commands {
         if (Pattern.compile("^BREAKLOOP", Pattern.MULTILINE).matcher(line).find()) {
 
             return new LoopBreak(line, index);
+
+        }
+
+        if (Pattern.compile("^READFILE", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new ReadFile(line, index);
 
         }
 
