@@ -3,6 +3,7 @@ package bluc.engine;
 import java.util.regex.Pattern;
 
 import bluc.engine.codes.Comment;
+import bluc.engine.codes.ConcatString;
 import bluc.engine.codes.Delay;
 import bluc.engine.codes.ErrorOut;
 import bluc.engine.codes.ExitCmd;
@@ -118,6 +119,12 @@ public class Commands {
         if (Pattern.compile("^READFILE", Pattern.MULTILINE).matcher(line).find()) {
 
             return new ReadFile(line, index);
+
+        }
+
+        if (Pattern.compile("^CONCAT", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new ConcatString(line, index);
 
         }
 

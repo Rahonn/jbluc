@@ -3,6 +3,7 @@ package bluc.engine.codes;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.util.ArrayList;
 
 import bluc.engine.codes.base.Basecode;
 import bluc.engine.vars.Var;
@@ -38,11 +39,27 @@ public class ReadFile extends Basecode {
 
             String filedata = String.valueOf("");
 
+            ArrayList<String> lines = new ArrayList<>();
+
             String line;
 
             while ((line = br.readLine()) != null) {
 
-                filedata += line + '\n';
+                lines.add(line);
+
+            }
+
+            for (int i = 0; i < lines.size(); i++) {
+
+                if (i == lines.size() - 1) {
+
+                    filedata += lines.get(i);
+
+                } else {
+
+                    filedata += lines.get(i) + '\n';
+
+                }
 
             }
 
