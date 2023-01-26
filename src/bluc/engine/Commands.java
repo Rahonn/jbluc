@@ -20,6 +20,7 @@ import bluc.engine.codes.PrintVar;
 import bluc.engine.codes.ReadFile;
 import bluc.engine.codes.RunIfCmd;
 import bluc.engine.codes.SetVar;
+import bluc.engine.codes.WriteFile;
 import bluc.engine.codes.base.Basecode;
 
 public class Commands {
@@ -125,6 +126,12 @@ public class Commands {
         if (Pattern.compile("^CONCAT", Pattern.MULTILINE).matcher(line).find()) {
 
             return new ConcatString(line, index);
+
+        }
+
+        if (Pattern.compile("^WRITEFILE", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new WriteFile(line, index);
 
         }
 
