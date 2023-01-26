@@ -1,0 +1,6 @@
+PRINT Please enter your name
+INPUT name
+PRINT  
+PRINT Hi
+PRINTVAR name
+PRINT nice to meet you

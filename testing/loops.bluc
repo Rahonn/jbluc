@@ -2,7 +2,7 @@
 PRINT Starting loop
 
 LOOP c 10
-BREAKLOOP
+
 RUNIF $c >= 5 |PRINT stop|PRINT go on|
 RUNIF $c >= 5 |BREAKLOOP|PASS|
 

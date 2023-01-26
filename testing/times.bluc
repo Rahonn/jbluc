@@ -1,0 +1,12 @@
+TIME GET st
+
+PRINT Hello World!
+
+DELAY 1
+
+TIME GET et
+
+MATH rt - et st
+
+PRINT Ran in
+PRINTVAR rt

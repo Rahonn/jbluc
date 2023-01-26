@@ -1,4 +1,4 @@
-READFILE text ../testing/files/file.txt
+READFILE text file.txt
 CONCAT text |$text|\nI was here!|
 PRINTVAR text
-WRITEFILE text ../testing/files/file.txt
+WRITEFILE text file.txt

@@ -1,0 +1,7 @@
+IMPORT ../testing/file2.bluc
+
+PRINTVAR msg
+PRINT Here is a random number:
+PRINTVAR randnum
+PRINT Here is a random number from 21 to 747
+PRINTVAR randnumf21t747

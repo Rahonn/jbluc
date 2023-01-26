@@ -1,0 +1,12 @@
+PRINT HINT: Smaller is better
+PRINT Enter a number:
+INPUT num
+
+DELAY $num
+
+PRINT Thanks for waiting
+
+MATH rn RAND @ @
+
+PRINT Here is a random number
+PRINTVAR rn

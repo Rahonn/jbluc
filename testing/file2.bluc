@@ -1,0 +1,4 @@
+IMPORT ../testing/folder/file3.bluc
+
+SET msg = This is a var from a differnt file!
+MATH randnum RAND @ @

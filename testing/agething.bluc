@@ -1,0 +1,8 @@
+# Output to Python
+
+PRINT Please enter your age:
+INPUT age
+MATH yearsto13 - 13 age
+RUNIF $age >= 13 |PRINT Welcome to the internet!|PRINT In|
+RUNIF $age < 13 |PRINTVAR yearsto13|PASS|
+RUNIF $age < 13 |PRINT year/s you can use the internet!|PASS|

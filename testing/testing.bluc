@@ -1,0 +1,15 @@
+PRINT Enter a number:
+INPUT number1
+#SET number1 = 73
+PRINT Enter your name:
+INPUT name
+#SET name = Jack
+PRINTVAR name
+IF over50 $number1 >= 50 :Your number is bigger then 50:Your number is less then 50:
+IF nameisdavid $name == !David! :Your name is David:Your name is not David:
+IF a 5 == 5 :A:B:
+RUNIF !Cat! != !Cat! |PRINT YAY|PRINT NO YAY use :(|
+
+PRINTVAR over50
+PRINTVAR nameisdavid
+

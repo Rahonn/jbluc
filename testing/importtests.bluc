@@ -1,0 +1,11 @@
+
+LOOP i 10
+
+
+PRINT Do you want to exit? (y or n)
+INPUT dostop
+
+RUNIF $dostop == !y! |IMPORT ../testings/goodbyeloop.bluc|PASS|
+
+ENDLOOP
+

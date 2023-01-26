@@ -1,0 +1,55 @@
+PRINT Welcome to only guessing game where you only get 5 guesses!
+PRINT Hello, please enter your name
+INPUT name
+PRINT Well hello
+PRINTVAR name
+PRINT lets get started!
+PRINT At any time enter 0 to exit!
+MATH num RAND 1 10
+PRINT Guess 1
+PRINT Enter a number from 1 to 10:
+INPUT number
+RUNIF $number == $num |PRINT WOW. You Win!|PASS|
+RUNIF $number == $num |EXIT|PASS|
+RUNIF $number > $num |PRINT Lower!|PASS|
+RUNIF $number < $num |PRINT Heiger!|PASS|
+RUNIF $number == 0 |PRINT Well the number was|PASS|
+RUNIF $number == 0 |PRINTVAR num|PASS|
+PRINT Guess 2
+PRINT Enter a number from 1 to 10:
+INPUT number
+RUNIF $number == $num |PRINT WOW. You Win!|PASS|
+RUNIF $number == $num |EXIT|PASS|
+RUNIF $number > $num |PRINT Lower!|PASS|
+RUNIF $number < $num |PRINT Heiger!|PASS|
+RUNIF $number == 0 |PRINT Well the number was|PASS|
+RUNIF $number == 0 |PRINTVAR num|PASS|
+PRINT Guess 3
+PRINT Enter a number from 1 to 10:
+INPUT number
+RUNIF $number == $num |PRINT WOW. You Win!|PASS|
+RUNIF $number == $num |EXIT|PASS|
+RUNIF $number > $num |PRINT Lower!|PASS|
+RUNIF $number < $num |PRINT Heiger!|PASS|
+RUNIF $number == 0 |PRINT Well the number was|PASS|
+RUNIF $number == 0 |PRINTVAR num|PASS|
+PRINT Guess 4
+PRINT Enter a number from 1 to 10:
+INPUT number
+RUNIF $number == $num |PRINT WOW. You Win!|PASS|
+RUNIF $number == $num |EXIT|PASS|
+RUNIF $number > $num |PRINT Lower!|PASS|
+RUNIF $number < $num |PRINT Heiger!|PASS|
+RUNIF $number == 0 |PRINT Well the number was|PASS|
+RUNIF $number == 0 |PRINTVAR num|PASS|
+PRINT Guess 5
+PRINT Enter a number from 1 to 10:
+INPUT number
+RUNIF $number == $num |PRINT WOW. You Win!|PASS|
+RUNIF $number == $num |EXIT|PASS|
+RUNIF $number > $num |PRINT Lower!|PASS|
+RUNIF $number < $num |PRINT Heiger!|PASS|
+RUNIF $number == 0 |PRINT Well the number was|PASS|
+RUNIF $number == 0 |PRINTVAR num|PASS|
+PRINT Goodbye
+PRINTVAR name
