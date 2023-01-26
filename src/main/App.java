@@ -31,7 +31,7 @@ public class App {
 
         if (this.args.length == 0) {
 
-            Printer.println("Welcome to JBLUC (Java BLUC)!", PrintableColors.GREEN);
+            Printer.println("Welcome to JBLUC (Java BLUC)!", PrintableColors.LIGHT_GREEN);
 
             this.help();
 
@@ -90,6 +90,29 @@ public class App {
         Printer.println("Print\t-\tTo print something out\t-\tPRINT [string]", PrintableColors.BLUE);
         Printer.println("Print Var\t-\tTo print a var out\t-\tPRINTVAR [varname]", PrintableColors.BLUE);
         Printer.println("Set\t-\tTo set a var\t-\tSET [varname] = [value]", PrintableColors.BLUE);
+        Printer.println("Input\t-\tTo get user input\t-\tINPUT [varname]", PrintableColors.BLUE);
+        Printer.println("Math\t-\tOperators +, -, *, /, **, RAND and store the result to a new var. If you are using RAND you can make num1 and num2 @ for no set range\t-\tMATH [varname] [operator] [num1] [num2]", PrintableColors.BLUE);
+        Printer.println("Delay\t-\tAdd a delay to your code. You can use a var just place a varname in it but put a $ at the start\t-\tDELAY [seconds]", PrintableColors.BLUE);
+        Printer.println("Comments\t-\tUse # for comments\t-\t# [comment]", PrintableColors.BLUE);
+        Printer.println("If\t-\tAn if system. Replace varname with the name of the outvar, replace args with the args use for string with this put a ! at the start and end and if you are using a var as a arg put a $ at the start of it's name\t-\tIF [varname] [arg1] [op] [arg2] :[outiftrue]:   [outiffalse]:", PrintableColors.BLUE);
+        Printer.println(
+            "Run If\t-\tAn if system. Replace args with the args use for string with this put a ! at the start and end and if you are using a var as a arg put a $ at the start of it's name, replace [outcmdiftrue] with the command to run if the if is true same for the [outcmdiffalse] but for false instead\t-\tRUNIF [arg1] [op] [arg2] |[outcmdiftrue]|[outcmdiffalse]|", PrintableColors.BLUE);
+        Printer.println("Exit\t-\tExit the app\t-\tEXIT", PrintableColors.BLUE);
+        Printer.println("Import\t-\tUse the import command to load code from a different file. Replace [path] with the path to the bluc file include the file extension\t-\tIMPORT [path]", PrintableColors.BLUE);
+        Printer.println("Pass\t-\tThis command does not do anything!\t-\tPASS", PrintableColors.BLUE);
+        Printer.println(
+            "Loops\t-\tUse LOOPSTART [index varname] [times] replace [times] with @ for a infinite number of times. Use BREAKLOOP to break out of a loop. Use ENDLOOP to end a loop\t-\t\n\tLOOP index 5\n\tPRINTVAR index\n\tRUNIF $index == 3 |BREAKLOOP|PASS|\n\tENDLOOP", PrintableColors.BLUE);
+        Printer.println("Read file\t-\tUse to read files\t-\tREADFILE [outputvar] [filepath]", PrintableColors.BLUE);
+        Printer.println("Write file\t-\tUse to write files\t-\tWRITEFILE [inputvar] [filepath]", PrintableColors.BLUE);
+        Printer.println("String Concat\t-\tUse to add 2 vars to together as text. If you add 2 and 3 you will get 23. If your add Hello and World you will get Hello World. Replace [arg1] or [arg2] with plain text or for a var put a $ at the start of the name\t-\tCONCAT [outputvarname] |   [arg1]|[arg2]|", PrintableColors.BLUE);
+        Printer.println("Time Get\t-\tGet the current system time and store the result in a var\t-\tTIME GET [outputvar]", PrintableColors.BLUE);
+        Printer.println("", PrintableColors.BLUE);
+        Printer.println("\tComands Options", PrintableColors.RED);
+        Printer.println("Interpret\t-\tTo run code\t-\t./BLUC -i [filename]", PrintableColors.PURPLE);
+        Printer.println("Debug\t-\tInterprets and Compiles your code\t-\t./BLUC -d [filename]", PrintableColors.PURPLE);
+        Printer.println("Help\t-\tTo get this info\t-\t./BLUC --help", PrintableColors.PURPLE);
+        Printer.println("Run\t-\tUse to run your code\t-\t./BLUC [filename]", PrintableColors.PURPLE);
+        Printer.println("Version\t-\tTo get the BLUC version number\t-\t./BLUC --version", PrintableColors.PURPLE);
 
         this.version();
 
@@ -97,7 +120,7 @@ public class App {
 
     public void version() {
 
-        Printer.println("BLUC version: " + App.VERSION + "\nJBLUC version: " + App.JBLUC, PrintableColors.GREEN);
+        Printer.println("BLUC version: " + App.VERSION + "\nJBLUC version: " + App.JBLUC, PrintableColors.LIGHT_GREEN);
 
     }
 
