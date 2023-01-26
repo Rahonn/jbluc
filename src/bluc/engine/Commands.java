@@ -20,6 +20,7 @@ import bluc.engine.codes.PrintVar;
 import bluc.engine.codes.ReadFile;
 import bluc.engine.codes.RunIfCmd;
 import bluc.engine.codes.SetVar;
+import bluc.engine.codes.TimeCmd;
 import bluc.engine.codes.WriteFile;
 import bluc.engine.codes.base.Basecode;
 
@@ -132,6 +133,12 @@ public class Commands {
         if (Pattern.compile("^WRITEFILE", Pattern.MULTILINE).matcher(line).find()) {
 
             return new WriteFile(line, index);
+
+        }
+
+        if (Pattern.compile("^TIME", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new TimeCmd(line, index);
 
         }
 
