@@ -83,7 +83,7 @@ public class MathCmd extends Basecode {
 
                 if (num1s.equals("@") && num2s.equals("@")) {
 
-                    App.getvarmamager().setVar(this.varname, new Var<String>(String.valueOf(random.nextInt())));
+                    App.getvarmamager().setVar(this.varname, new Var<String>(String.valueOf(random.nextDouble())));
 
                 } else if (!num1s.equals("@") && !num2s.equals("@")) {
 

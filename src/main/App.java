@@ -16,8 +16,8 @@ import print.Printer;
 
 public class App {
 
-    public static final String VERSION = "11.0.0";
-    public static final String JBLUC = "1.0.0";
+    public static final String VERSION = "12.0.0";
+    public static final String JBLUC = "1.0.1";
 
     private String[] args;
     private static VarMamager varmamager = new VarMamager();
