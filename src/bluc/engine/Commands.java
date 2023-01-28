@@ -7,6 +7,9 @@ import bluc.engine.codes.ConcatString;
 import bluc.engine.codes.Delay;
 import bluc.engine.codes.ErrorOut;
 import bluc.engine.codes.ExitCmd;
+import bluc.engine.codes.FnCall;
+import bluc.engine.codes.FnEnd;
+import bluc.engine.codes.FnStart;
 import bluc.engine.codes.IfCmd;
 import bluc.engine.codes.ImportCmd;
 import bluc.engine.codes.Input;
@@ -139,6 +142,24 @@ public class Commands {
         if (Pattern.compile("^TIME", Pattern.MULTILINE).matcher(line).find()) {
 
             return new TimeCmd(line, index);
+
+        }
+
+        if (Pattern.compile("^FNDEF", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new FnStart(line, index);
+
+        }
+
+        if (Pattern.compile("^FNEND", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new FnEnd(line, index);
+
+        }
+
+        if (Pattern.compile("^FNCALL", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new FnCall(line, index);
 
         }
 

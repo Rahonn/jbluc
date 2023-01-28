@@ -13,12 +13,14 @@ public class VarMamager {
     private HashMap<String, Var<String>> vars;
     private ArrayList<Basecode> cmdList;
     private boolean runningLoop;
+    private HashMap<String, ArrayList<Basecode>> functions;
 
     public VarMamager() {
 
         this.vars = new HashMap<>();
         this.cmdList = new ArrayList<>();
         this.runningLoop = false;
+        this.functions = new HashMap<>();
 
         this.setVar("VERSION", new Var<String>(App.VERSION));
         this.setVar("JBLUC", new Var<String>(App.JBLUC));
@@ -90,6 +92,24 @@ public class VarMamager {
     public void setRunningLoop(boolean runningLoop) {
 
         this.runningLoop = runningLoop;
+
+    }
+
+    public HashMap<String, ArrayList<Basecode>> getFunctions() {
+
+        return this.functions;
+
+    }
+
+    public void addFunction(String name, ArrayList<Basecode> cmdList) {
+
+        this.functions.put(name, cmdList);
+
+    }
+
+    public ArrayList<Basecode> getFunctions(String name) {
+
+        return this.functions.get(name);
 
     }
 
