@@ -1,0 +1,16 @@
+
+TIME GET st
+
+LOOP i 1000000
+
+PRINTVAR i
+
+ENDLOOP
+
+TIME GET et
+
+MATH t - et st
+
+PRINT Ran in
+PRINTVAR t
+PRINT second/s

@@ -13,6 +13,7 @@ import bluc.engine.codes.FnStart;
 import bluc.engine.codes.IfCmd;
 import bluc.engine.codes.ImportCmd;
 import bluc.engine.codes.Input;
+import bluc.engine.codes.Interp;
 import bluc.engine.codes.LoopBreak;
 import bluc.engine.codes.LoopEnd;
 import bluc.engine.codes.LoopStart;
@@ -160,6 +161,12 @@ public class Commands {
         if (Pattern.compile("^FNCALL", Pattern.MULTILINE).matcher(line).find()) {
 
             return new FnCall(line, index);
+
+        }
+
+        if (Pattern.compile("^INTERP", Pattern.MULTILINE).matcher(line).find()) {
+
+            return new Interp(line, index);
 
         }
 
