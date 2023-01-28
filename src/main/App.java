@@ -155,12 +155,16 @@ public class App {
         Printer.println("Time Get\t-\tGet the current system time and store the result in a var\t-\tTIME GET [outputvar]", PrintableColors.BLUE);
         Printer.println(
                 "Functions\t-\tUse FNDEF [functionname]. Use FNEND to end a function. Use FNCALL [functionname] to call a function!\t-\t\n\tFNDEF myFunc\n\tPRINT This is my func\n\tFNEND\n\tFNCALL myFunc\n\tFNCALL myFunc", PrintableColors.BLUE);
+        Printer.println("Interp\t-\tUse to test if the code is running with a certain interpreter\t-\tINTERP [interpretername]", PrintableColors.BLUE);
         Printer.println("", PrintableColors.BLUE);
         Printer.println("\tComands Options", PrintableColors.RED);
         Printer.println("Interpret\t-\tTo run code\t-\t./BLUC -i [filename]", PrintableColors.PURPLE);
         Printer.println("Debug\t-\tInterprets and Compiles your code\t-\t./BLUC -d [filename]", PrintableColors.PURPLE);
         Printer.println("Help\t-\tTo get this info\t-\t./BLUC --help", PrintableColors.PURPLE);
         Printer.println("Run\t-\tUse to run your code\t-\t./BLUC [filename]", PrintableColors.PURPLE);
+        Printer.println("Compile\t-\tUse to compile your code\t-\t./BLUC -c [filename] [outputfile]", PrintableColors.PURPLE);
+        Printer.println("Run Compiled Code\t-\tUse to run your compiled code\t-\t./BLUC -rc [filename] [outputfile]", PrintableColors.PURPLE);
+        Printer.println("Debug Compiled Code\t-\tUse to debug your compiled code\t-\t./BLUC -drc [filename] [outputfile]", PrintableColors.PURPLE);
         Printer.println("Version\t-\tTo get the BLUC version number\t-\t./BLUC --version", PrintableColors.PURPLE);
 
         this.version();
