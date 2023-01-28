@@ -1,6 +1,8 @@
 package bluc.engine.codes.base;
 
-public abstract class Basecode implements Cloneable {
+import java.io.Serializable;
+
+public abstract class Basecode implements Cloneable, Serializable {
     
     protected String line;
     protected Integer index;

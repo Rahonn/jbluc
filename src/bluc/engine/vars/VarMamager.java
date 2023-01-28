@@ -113,4 +113,10 @@ public class VarMamager {
 
     }
 
+    public void setCmdList(ArrayList<Basecode> cmdList) {
+
+        this.cmdList = cmdList;
+
+    }
+
 }

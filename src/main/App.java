@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import bluc.engine.Commands;
+import bluc.engine.CompileSystem;
 import bluc.engine.codes.Input;
 import bluc.engine.codes.base.Basecode;
 import bluc.engine.vars.VarMamager;
@@ -75,6 +76,52 @@ public class App {
 
             }
 
+
+        } else if (this.args[0].equalsIgnoreCase("-c")) {
+
+            if (this.args.length >= 3) {
+
+                this.compileCode(this.args[1], this.args[2]);
+
+            } else {
+
+                this.compileCode(this.args[1], null);
+
+            }
+
+        } else if (this.args[0].equalsIgnoreCase("-rc")) {
+
+            this.runCompileCode(this.args[1]);
+
+        } else if (this.args[0].equalsIgnoreCase("-drc")) {
+
+            Printer.println("Running code...\n", PrintableColors.BLUE);
+
+            System.out.print(PrintableColors.GREEN.getStart());
+
+            this.runCompileCode(this.args[1]);
+
+            System.out.print(PrintableColors.GREEN.getEnd());
+
+            System.out.println();
+
+            App.varmamager.varDump();
+
+            Printer.print("\nIs this ok? (y or n): ", PrintableColors.BLUE);
+
+            System.out.print(PrintableColors.BLUE.getStart());
+            String res = Input.scanner.nextLine();
+            System.out.print(PrintableColors.BLUE.getEnd());
+
+            if (res.equalsIgnoreCase("y")) {
+
+                Printer.println("Thanks for using JBLUC", PrintableColors.BLUE);
+
+            } else {
+
+                Printer.println("Goodbye!", PrintableColors.BLUE);
+
+            }
 
         } else if (this.args.length == 1) {
 
@@ -178,6 +225,72 @@ public class App {
 
         }
 
+
+    }
+
+    public void compileCode(String path, String output) {
+
+        ArrayList<String> lines = new ArrayList<String>();
+
+        try {
+
+            FileReader fr = new FileReader(new File(path));
+
+            BufferedReader br = new BufferedReader(fr);
+
+            String line;
+
+            while ((line = br.readLine()) != null) {
+
+                lines.add(line);
+
+            }
+
+            br.close();
+            fr.close();
+
+        } catch (FileNotFoundException e) {
+            Printer.println("Can't find file " + path, PrintableColors.RED);
+        } catch (IOException e) {
+            Printer.println(e.toString(), PrintableColors.RED);
+        }
+
+        for (int i = 0; i < lines.size(); i++) {
+
+            Basecode cmd = Commands.getCommand(lines.get(i), null);
+
+            App.varmamager.addCmd(cmd);
+
+        }
+
+        String of = (output == null) ? "build.cjbluc" : output;
+
+        CompileSystem cs = new CompileSystem(App.getvarmamager().getCmdList());
+
+        CompileSystem.save(cs, of);
+
+    }
+
+    public void runCompileCode(String path) {
+
+        String of = (path == null) ? "build.cjbluc" : path;
+
+        CompileSystem.load(of);
+
+        for (int i = 0; i < App.varmamager.getCmdList().size(); i++) {
+
+            Basecode cmd = App.varmamager.getCmd(i);
+
+            boolean good = cmd.run();
+
+            if (!good) {
+
+                Printer.println("\nError!!!\n", PrintableColors.RED);
+                System.exit(0);
+
+            }
+
+        }
 
     }
 
