@@ -1,0 +1,9 @@
+FNDEF myFunc
+
+PRINT This is my function!
+
+FNEND
+
+FNCALL myFunc
+FNCALL myFunc
+FNCALL myFunc
