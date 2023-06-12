@@ -1,0 +1,28 @@
+
+plugins {
+
+    id "java"
+    id "application"
+
+}
+
+version = "1.0.1"
+
+java {
+
+    sourceCompatibility = 20
+    targetCompatibility = 20
+
+}
+
+mainClassName = "github.rahonn.jbluc.main.Main"
+
+jar {
+
+    manifest {
+
+        attributes "Main-Class": "github.rahonn.jbluc.main.Main"
+
+    }
+
+}
